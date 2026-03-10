@@ -1,0 +1,25 @@
+baseURL = "https://paraddise.github.io/"
+title = "Paraddise"
+theme = "PaperMod"
+
+[params]
+  mainSections = ["posts"]
+  description = "A simple blog of a Security Engineer"
+  author = "Paraddise"
+
+  # Hero / intro block on the main page
+  [params.homeInfoParams]
+    Title = "Paraddise"
+    Content = "Security engineer. Notes on MDM, Apple, and infosec."
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[minify]
+  disableXML = true
+  minifyOutput = true

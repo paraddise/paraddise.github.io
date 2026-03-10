@@ -1,0 +1,20 @@
+/* Main page hero / intro */
+.home-hero {
+  text-align: center;
+  min-height: 280px;
+  padding: calc(var(--gap) * 2) var(--gap);
+}
+.home-hero .entry-header h1 {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25em;
+}
+.home-hero .entry-content {
+  font-size: 1.05rem;
+  color: var(--secondary);
+  max-width: 36em;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-line-clamp: unset;
+}
