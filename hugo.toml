@@ -17,9 +17,6 @@ theme = "PaperMod"
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
 
-  # GoatCounter (set to your counter URL from goatcounter.com)
-  goatcounter_url = "https://kolomby.goatcounter.com/count"
-
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
