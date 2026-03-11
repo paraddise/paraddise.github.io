@@ -1,2 +1,6 @@
 {{- /* Custom CSS for main page and other overrides */ -}}
 <link rel="stylesheet" href="{{ "css/custom.css" | absURL }}">
+
+{{- with site.Params.goatcounter_url }}
+<script data-goatcounter="{{ . }}" async src="https://gc.zgo.at/count.js"></script>
+{{- end }}
