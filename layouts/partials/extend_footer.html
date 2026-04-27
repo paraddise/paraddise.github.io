@@ -1,0 +1,20 @@
+{{- /* Mermaid: Goldmark emits <pre><code class="language-mermaid">; replace with div.mermaid and render. */ -}}
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.esm.min.mjs";
+  const dark =
+    document.querySelector("html")?.dataset?.theme === "dark" ||
+    (document.querySelector("html")?.dataset?.theme !== "light" &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches);
+  mermaid.initialize({ startOnLoad: false, theme: dark ? "dark" : "default" });
+  const codes = document.querySelectorAll("pre code.language-mermaid");
+  if (codes.length) {
+    codes.forEach((code) => {
+      const pre = code.parentElement;
+      const div = document.createElement("div");
+      div.className = "mermaid";
+      div.textContent = code.textContent;
+      pre.replaceWith(div);
+    });
+    await mermaid.run();
+  }
+</script>

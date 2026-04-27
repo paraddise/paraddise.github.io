@@ -16,6 +16,7 @@ theme = "PaperMod"
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
+  mermaid = true
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
