@@ -48,8 +48,8 @@ For a developer, the main difference is how the connection is created.
 **Example: connecting via `mach` lookup (Agent or Daemon):**
 
 ```text
-$ ls /Applications/Privileges.app/Contents/XPCServices
-PrivilegesXPC.xpc
+_connection = [[NSXPCConnection alloc] initWithMachServiceName:kMTAgentMachServiceName options:0];
+[_connection setRemoteObjectInterface:[NSXPCInterface interfaceWithProtocol:@protocol(PrivilegesAgentProtocol)]];
 ```
 
 You look up the service in the global name space by its identifier. This is the step the **sandbox blocks** if the app lacks the right entitlements.
@@ -57,8 +57,8 @@ You look up the service in the global name space by its identifier. This is the 
 **Example: connecting to a bundled XPC service:**
 
 ```objc
-_connection = [[NSXPCConnection alloc] initWithMachServiceName:kMTAgentMachServiceName options:0];
-[_connection setRemoteObjectInterface:[NSXPCInterface interfaceWithProtocol:@protocol(PrivilegesAgentProtocol)]];
+_xpcServiceConnection = [[NSXPCConnection alloc] initWithServiceName:kMTXPCServiceName];
+[_xpcServiceConnection setRemoteObjectInterface:[NSXPCInterface interfaceWithProtocol:@protocol(PrivilegesXPCProtocol)]];
 ```
 
 The system knows the service is in the same bundle, so this path is allowed even for sandboxed apps.
